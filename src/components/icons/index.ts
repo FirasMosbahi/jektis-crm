@@ -1,0 +1,16 @@
+export { default as AchatIcon } from "./AchatIcon";
+export { default as AddIcon } from "./AddIcon";
+export { default as CalendarIcon } from "./CalendarIcon";
+export { default as DashboardIcon } from "./DashboardIcon";
+export { default as FactureIcon } from "./FactureIcon";
+export { default as HotelIcon } from "./HotelIcon";
+export { default as MoreDetailsIcon } from "./MoreDetailsIcon";
+export { default as NotificationIcon } from "./NotificationIcon";
+export { default as ProfileIcon } from "./ProfileIcon";
+export { default as SidebarTrigger } from "./SidebarTrigger";
+export { default as TablesIcon } from "./TablesIcon";
+export { default as TicketIcon } from "./TicketIcon";
+export { default as UpdateIcon } from "./UpdateIcon";
+export { default as UrgentIcon } from "./UrgentIcon";
+export { default as VisaIcon } from "./VisaIcon";
+export { default as VoyageIcon } from "./VoyageIcon";
