@@ -19,7 +19,6 @@ const SvgFactureIcon = (props: SVGProps<SVGSVGElement>) => (
         strokeLinecap: "round",
         strokeLinejoin: "round",
         strokeMiterlimit: 4.1,
-        InkscapeStroke: "none",
       }}
       transform="translate(36 -148)"
     />
@@ -32,7 +31,6 @@ const SvgFactureIcon = (props: SVGProps<SVGSVGElement>) => (
         strokeLinecap: "round",
         strokeLinejoin: "round",
         strokeMiterlimit: 4.1,
-        InkscapeStroke: "none",
       }}
       transform="translate(36 -148)"
     />
