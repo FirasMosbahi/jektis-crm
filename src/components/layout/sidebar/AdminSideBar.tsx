@@ -26,7 +26,10 @@ interface SidebarProps {
   setSidebarOpen: (arg: boolean) => void;
 }
 
-const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
+export default function AdminSideBar({
+  sidebarOpen,
+  setSidebarOpen,
+}: SidebarProps) {
   const pathname = usePathname();
 
   const trigger = useRef<any>(null);
@@ -108,31 +111,74 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
 
             <ul className="mb-6 flex flex-col gap-1.5">
               <li>
-                <SideBarElement element="dashboard" icon={<DashboardIcon />} />
+                <SideBarElement
+                  element="dashboard"
+                  link="/demands/dashboard"
+                  icon={<DashboardIcon />}
+                />
               </li>
               <li>
-                <SideBarElement element="urgent" icon={<UrgentIcon />} />
+                <SideBarElement
+                  element="add urgent"
+                  link="/admin/urgent"
+                  icon={<UrgentIcon />}
+                />
               </li>
               <li>
-                <SideBarElement element="hotels" icon={<HotelIcon />} />
+                <SideBarElement
+                  element="add hotel"
+                  link="/admin/hotels"
+                  icon={<HotelIcon />}
+                />
               </li>
               <li>
-                <SideBarElement element="voyages" icon={<VoyageIcon />} />
+                <SideBarElement
+                  element="add voyage"
+                  link="/admin/voyages"
+                  icon={<VoyageIcon />}
+                />
               </li>
               <li>
-                <SideBarElement element="visa" icon={<VisaIcon />} />
+                <SideBarElement
+                  element="add visa"
+                  link="/admin/visa"
+                  icon={<VisaIcon />}
+                />
               </li>
               <li>
-                <SideBarElement element="billet" icon={<TicketIcon />} />
+                <SideBarElement
+                  element="add billet"
+                  link="/admin/billet"
+                  icon={<TicketIcon />}
+                />
               </li>
               <li>
-                <SideBarElement element="facture" icon={<FactureIcon />} />
+                <SideBarElement
+                  element="add facture"
+                  link="/admin/facture"
+                  icon={<FactureIcon />}
+                />
               </li>
               <li>
-                <SideBarElement element="achat" icon={<AchatIcon />} />
+                <SideBarElement
+                  element="add achat"
+                  link="/admin/achat"
+                  icon={<AchatIcon />}
+                />
               </li>
               <li>
-                <SideBarElement element="update" icon={<UpdateIcon />} />
+                <SideBarElement
+                  element="add update"
+                  link="/demands/update"
+                  icon={<UpdateIcon />}
+                />
+              </li>
+              <li>
+                <SideBarElement
+                  element="add agent"
+                  link="/admin/add-agent"
+                  icon={<ProfileIcon />}
+                />
               </li>
             </ul>
           </div>
@@ -140,6 +186,4 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
       </div>
     </aside>
   );
-};
-
-export default Sidebar;
+}

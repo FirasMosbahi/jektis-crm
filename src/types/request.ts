@@ -10,5 +10,6 @@ export class ClientRequest {
   description: string;
   status: RequestStatus;
   createdAt: Date;
+  deadline?: Date;
   closedAt: Date;
 }
