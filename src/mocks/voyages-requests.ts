@@ -3,6 +3,7 @@ import { clients } from "@jektis-crm/mocks/clients";
 import { CreationMethod } from "@jektis-crm/enums/creation-method";
 import { RequestStatus } from "@jektis-crm/enums/request-status";
 import { VoyageType } from "@jektis-crm/enums/voyage-type";
+import { RequestType } from "@jektis-crm/enums/request-type";
 
 export const voyagesReservationRequests: VoyageReservationRequest[] = [
   {
@@ -17,6 +18,7 @@ export const voyagesReservationRequests: VoyageReservationRequest[] = [
     destination: "destination 1",
     nombreDePlaces: 5,
     type: VoyageType.ALLER_SIMPLE,
+    requestType: RequestType.VOYAGE,
   },
   {
     id: `request 2`,
@@ -30,6 +32,7 @@ export const voyagesReservationRequests: VoyageReservationRequest[] = [
     destination: "destination 2",
     nombreDePlaces: 5,
     type: VoyageType.ALLER_SIMPLE,
+    requestType: RequestType.VOYAGE,
   },
   {
     id: `request 3`,
@@ -43,6 +46,7 @@ export const voyagesReservationRequests: VoyageReservationRequest[] = [
     destination: "destination 3",
     nombreDePlaces: 5,
     type: VoyageType.ALLER_RETOUR,
+    requestType: RequestType.VOYAGE,
   },
   {
     id: `request 4`,
@@ -56,6 +60,7 @@ export const voyagesReservationRequests: VoyageReservationRequest[] = [
     destination: "destination 4",
     nombreDePlaces: 5,
     type: VoyageType.ALLER_SIMPLE,
+    requestType: RequestType.VOYAGE,
   },
   {
     id: `request 5`,
@@ -69,6 +74,7 @@ export const voyagesReservationRequests: VoyageReservationRequest[] = [
     destination: "destination 5",
     nombreDePlaces: 5,
     type: VoyageType.ALLER_SIMPLE,
+    requestType: RequestType.VOYAGE,
   },
   {
     id: `request 6`,
@@ -82,5 +88,6 @@ export const voyagesReservationRequests: VoyageReservationRequest[] = [
     destination: "destination 6",
     nombreDePlaces: 5,
     type: VoyageType.ALLER_SIMPLE,
+    requestType: RequestType.VOYAGE,
   },
 ];

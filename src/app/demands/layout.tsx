@@ -1,3 +1,5 @@
+"use client";
+
 import ClientLayout from "@jektis-crm/components/layout";
 
 export default function Layout({

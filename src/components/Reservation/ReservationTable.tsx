@@ -5,10 +5,10 @@ import React from "react";
 
 export default function ReservationTable({
   reservationsList,
-  actionsList,
+  actionsListFactory,
 }: {
   reservationsList: ClientRequest[];
-  actionsList: (item: ClientRequest) => React.ReactElement[];
+  actionsListFactory: (item: ClientRequest) => React.ReactElement[];
 }) {
   return (
     <div className="flex flex-col gap-10">
@@ -20,7 +20,7 @@ export default function ReservationTable({
               <ReservationItem
                 key={request.id}
                 reservationRequest={request}
-                actionsList={actionsList(request)}
+                actionsList={actionsListFactory(request)}
               />
             ))}
           </table>

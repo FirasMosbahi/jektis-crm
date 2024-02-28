@@ -1,13 +1,14 @@
 "use client";
-import { HotelReservationRequest } from "@jektis-crm/types/hotel";
 import { Modal } from "flowbite-react";
 import React, { useState } from "react";
-import { MoreDetailsIcon } from "@jektis-crm/components/icons";
+import { MoreDetailsIcon, ProfileIcon } from "@jektis-crm/components/icons";
+import { Client } from "@jektis-crm/types/client";
+import { BilletRequest } from "@jektis-crm/types/billet";
 
-export default function HotelDemandDetailsModal({
-  hotelDemand,
+export default function BilletDetailsModal({
+  billetRequest,
 }: {
-  hotelDemand: HotelReservationRequest;
+  billetRequest: BilletRequest;
 }) {
   const [openModal, setOpenModal] = useState<boolean>(false);
   return (
@@ -21,24 +22,24 @@ export default function HotelDemandDetailsModal({
         onClose={() => setOpenModal(false)}
       >
         <Modal.Header className="text-4xl px-12 py-6">
-          {hotelDemand.title}
+          {billetRequest.title}
         </Modal.Header>
         <Modal.Body>
           <div className=" max-w-2xl overflow-hidden sm:rounded-lg">
             <div className="px-4 py-5 sm:px-6">
               <p className="mt-1 text-base max-w-2xl text-gray-500">
-                {hotelDemand.description}
+                {billetRequest.description}
               </p>
             </div>
             <div className="border-t border-gray-200">
               <dl>
-                {hotelDemand.deadline && (
+                {billetRequest.deadline && (
                   <div className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                     <dt className="font-medium text-gray-500">
                       To be completed before :
                     </dt>
                     <dd className="mt-1 text-gray-900 sm:mt-0 sm:col-span-2">
-                      {hotelDemand.deadline.toString().split("T")[0]}
+                      {billetRequest.deadline.toString().split("T")[0]}
                     </dd>
                   </div>
                 )}
@@ -47,27 +48,43 @@ export default function HotelDemandDetailsModal({
                     Creation method :
                   </dt>
                   <dd className="mt-1 text-gray-900 sm:mt-0 sm:col-span-2">
-                    {hotelDemand.creationMethod}
+                    {billetRequest.creationMethod}
                   </dd>
                 </div>
                 <div className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                  <dt className=" font-medium text-gray-500">Hotel :</dt>
+                  <dt className=" font-medium text-gray-500">Destination :</dt>
                   <dd className="mt-1  text-gray-900 sm:mt-0 sm:col-span-2">
-                    {hotelDemand.hotelName}
+                    {billetRequest.destination}
                   </dd>
                 </div>
                 <div className="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                  <dt className=" font-medium text-gray-500">location :</dt>
+                  <dt className=" font-medium text-gray-500">vol date :</dt>
                   <dd className="mt-1  text-gray-900 sm:mt-0 sm:col-span-2">
-                    {hotelDemand.location}
+                    {billetRequest.volDate.toString().split("T")[0]}
+                  </dd>
+                </div>
+                <div className="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                  <dt className=" font-medium text-gray-500">
+                    preferred airline :
+                  </dt>
+                  <dd className="mt-1  text-gray-900 sm:mt-0 sm:col-span-2">
+                    {billetRequest.airline}
+                  </dd>
+                </div>
+                <div className="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                  <dt className=" font-medium text-gray-500">
+                    are scales allowed :
+                  </dt>
+                  <dd className="mt-1  text-gray-900 sm:mt-0 sm:col-span-2">
+                    {billetRequest.allowEscales}
                   </dd>
                 </div>
                 <div className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                   <dt className=" font-medium text-gray-500">
-                    number of chambres :
+                    baggage weight :
                   </dt>
                   <dd className="mt-1 text-gray-900 sm:mt-0 sm:col-span-2">
-                    {hotelDemand.numberOfChambres}
+                    {billetRequest.baggageWeight}
                   </dd>
                 </div>
               </dl>

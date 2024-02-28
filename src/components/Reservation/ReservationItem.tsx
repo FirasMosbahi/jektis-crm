@@ -24,7 +24,7 @@ export default function ReservationItem({
       </td>
       <td className="border-b border-[#eee] px-4 py-5">
         <p className="text-black">
-          {reservationRequest.createdAt.toDateString()}
+          {reservationRequest?.createdAt.toString().split("T")[0]}
         </p>
       </td>
       <td className="border-b border-[#eee] px-4 py-5">

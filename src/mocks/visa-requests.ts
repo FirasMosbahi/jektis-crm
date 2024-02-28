@@ -2,7 +2,7 @@ import { VisaRequest } from "@jektis-crm/types/visa";
 import { clients } from "@jektis-crm/mocks/clients";
 import { CreationMethod } from "@jektis-crm/enums/creation-method";
 import { RequestStatus } from "@jektis-crm/enums/request-status";
-import { VoyageType } from "@jektis-crm/enums/voyage-type";
+import { RequestType } from "@jektis-crm/enums/request-type";
 
 export const visaRequests: VisaRequest[] = [
   {
@@ -17,6 +17,7 @@ export const visaRequests: VisaRequest[] = [
     destination: "destination 1",
     duration: "30 days",
     startFrom: new Date(),
+    requestType: RequestType.VISA,
   },
   {
     id: `request 2`,
@@ -30,6 +31,7 @@ export const visaRequests: VisaRequest[] = [
     destination: "destination 2",
     duration: "10 days",
     startFrom: new Date(),
+    requestType: RequestType.VISA,
   },
   {
     id: `request 3`,
@@ -43,6 +45,7 @@ export const visaRequests: VisaRequest[] = [
     destination: "destination 3",
     duration: "18 days",
     startFrom: new Date(),
+    requestType: RequestType.VISA,
   },
   {
     id: `request 4`,
@@ -56,6 +59,7 @@ export const visaRequests: VisaRequest[] = [
     destination: "destination 4",
     duration: "12 days",
     startFrom: new Date(),
+    requestType: RequestType.VISA,
   },
   {
     id: `request 5`,
@@ -69,6 +73,7 @@ export const visaRequests: VisaRequest[] = [
     destination: "destination 5",
     duration: "40 days",
     startFrom: new Date(),
+    requestType: RequestType.VISA,
   },
   {
     id: `request 6`,
@@ -82,5 +87,6 @@ export const visaRequests: VisaRequest[] = [
     destination: "destination 6",
     duration: "8 days",
     startFrom: new Date(),
+    requestType: RequestType.VISA,
   },
 ];

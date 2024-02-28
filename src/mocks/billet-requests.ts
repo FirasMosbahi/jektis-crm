@@ -2,6 +2,7 @@ import { clients } from "@jektis-crm/mocks/clients";
 import { CreationMethod } from "@jektis-crm/enums/creation-method";
 import { RequestStatus } from "@jektis-crm/enums/request-status";
 import { BilletRequest } from "@jektis-crm/types/billet";
+import { RequestType } from "@jektis-crm/enums/request-type";
 
 export const billetRequests: BilletRequest[] = [
   {
@@ -18,6 +19,7 @@ export const billetRequests: BilletRequest[] = [
     allowEscales: false,
     baggageWeight: 15,
     volDate: new Date(),
+    requestType: RequestType.BILLET,
   },
   {
     id: `request 2`,
@@ -33,6 +35,7 @@ export const billetRequests: BilletRequest[] = [
     allowEscales: true,
     baggageWeight: 25,
     volDate: new Date(),
+    requestType: RequestType.BILLET,
   },
   {
     id: `request 3`,
@@ -48,6 +51,7 @@ export const billetRequests: BilletRequest[] = [
     allowEscales: true,
     baggageWeight: 40,
     volDate: new Date(),
+    requestType: RequestType.BILLET,
   },
   {
     id: `request 4`,
@@ -63,6 +67,7 @@ export const billetRequests: BilletRequest[] = [
     allowEscales: false,
     baggageWeight: 5,
     volDate: new Date(),
+    requestType: RequestType.BILLET,
   },
   {
     id: `request 5`,
@@ -78,6 +83,7 @@ export const billetRequests: BilletRequest[] = [
     allowEscales: true,
     baggageWeight: 35,
     volDate: new Date(),
+    requestType: RequestType.BILLET,
   },
   {
     id: `request 6`,
@@ -93,5 +99,6 @@ export const billetRequests: BilletRequest[] = [
     allowEscales: false,
     baggageWeight: 28,
     volDate: new Date(),
+    requestType: RequestType.BILLET,
   },
 ];

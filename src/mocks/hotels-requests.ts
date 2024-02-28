@@ -2,6 +2,7 @@ import { HotelReservationRequest } from "@jektis-crm/types/hotel";
 import { clients } from "@jektis-crm/mocks/clients";
 import { CreationMethod } from "@jektis-crm/enums/creation-method";
 import { RequestStatus } from "@jektis-crm/enums/request-status";
+import { RequestType } from "@jektis-crm/enums/request-type";
 
 export const hotelsReservationRequests: HotelReservationRequest[] = [
   {
@@ -17,6 +18,7 @@ export const hotelsReservationRequests: HotelReservationRequest[] = [
     hotelName: `Hotel 1`,
     isTunisianHotel: true,
     numberOfChambres: 2,
+    requestType: RequestType.HOTEL,
   },
   {
     id: `request 2`,
@@ -31,6 +33,7 @@ export const hotelsReservationRequests: HotelReservationRequest[] = [
     hotelName: `Hotel 1`,
     isTunisianHotel: true,
     numberOfChambres: 2,
+    requestType: RequestType.HOTEL,
   },
   {
     id: `request 3`,
@@ -45,6 +48,7 @@ export const hotelsReservationRequests: HotelReservationRequest[] = [
     hotelName: `Hotel 1`,
     isTunisianHotel: true,
     numberOfChambres: 2,
+    requestType: RequestType.HOTEL,
   },
   {
     id: `request 4`,
@@ -59,6 +63,7 @@ export const hotelsReservationRequests: HotelReservationRequest[] = [
     hotelName: `Hotel 1`,
     isTunisianHotel: true,
     numberOfChambres: 2,
+    requestType: RequestType.HOTEL,
   },
   {
     id: `request 5`,
@@ -73,6 +78,7 @@ export const hotelsReservationRequests: HotelReservationRequest[] = [
     hotelName: `Hotel 1`,
     isTunisianHotel: true,
     numberOfChambres: 2,
+    requestType: RequestType.HOTEL,
   },
   {
     id: `request 6`,
@@ -87,5 +93,6 @@ export const hotelsReservationRequests: HotelReservationRequest[] = [
     hotelName: `Hotel 1`,
     isTunisianHotel: true,
     numberOfChambres: 2,
+    requestType: RequestType.HOTEL,
   },
 ];
