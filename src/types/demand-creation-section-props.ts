@@ -1,4 +1,4 @@
 export type DemandCreationSectionProps = {
   onPrev?: () => void;
-  onNext?: () => void;
+  onNext?: (data: any) => void;
 };

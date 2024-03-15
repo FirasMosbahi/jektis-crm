@@ -2,7 +2,13 @@
 
 import { useState } from "react";
 
-export default function CustomRadioButton({ text }: { text: string }) {
+export default function CustomRadioButton({
+  text,
+  handleClick,
+}: {
+  text: string;
+  handleClick?: (isChecked: boolean) => void;
+}) {
   const [isChecked, setIsChecked] = useState<boolean>(false);
 
   return (
@@ -17,6 +23,9 @@ export default function CustomRadioButton({ text }: { text: string }) {
             id="checkboxLabel"
             className="sr-only"
             onClick={() => {
+              if (handleClick) {
+                handleClick(!isChecked);
+              }
               setIsChecked(!isChecked);
             }}
           />

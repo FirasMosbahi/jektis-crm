@@ -11,3 +11,12 @@ export async function getHotels() {
   });
   return result.data;
 }
+
+export async function createHotelReservationDemand(data) {
+  const result = await fetcher({
+    url: `${process.env.BACKEND_HOST}${Endpoints.getHotels}`,
+    method: "POST",
+    addAccessToken: true,
+    body: data,
+  });
+}

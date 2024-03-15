@@ -2,19 +2,39 @@
 
 import { useForm } from "react-hook-form";
 import { AddAgentFormData } from "@jektis-crm/types/form-data";
-import createAgent from "@jektis-crm/firebase/create-agent";
+import * as yup from "yup";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { useState } from "react";
+import { createAgent } from "@jektis-crm/actions/auth/create-agent";
+
+const createAgentValidationSchema = yup.object().shape({
+  email: yup
+    .string()
+    .required("email field is empty")
+    .email("please provide a valid email"),
+  password: yup
+    .string()
+    .required("password field is empty")
+    .min(8, "password should contains at least 8 characters"),
+  rePassword: yup
+    .string()
+    .required("password field is empty")
+    .min(8, "password should contains at least 8 characters")
+    .oneOf([yup.ref("password"), null], "Passwords must match"),
+  name: yup.string().required("name field is empty"),
+});
 
 export default function Page() {
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<AddAgentFormData>();
+  } = useForm({
+    resolver: yupResolver(createAgentValidationSchema),
+  });
 
   const onSubmit = handleSubmit(async (data: AddAgentFormData) => {
-    if (data.password == data.rePassword) {
-      await createAgent(data);
-    }
+    await createAgent(data);
   });
 
   return (
@@ -38,6 +58,9 @@ export default function Page() {
               placeholder="Enter your full name"
               className="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter"
             />
+            {errors.name && (
+              <p className="text-red-600 pt-1 pl-2">{errors.name.message}</p>
+            )}
           </div>
 
           <div className="mb-4.5">
@@ -54,6 +77,9 @@ export default function Page() {
               placeholder="Enter your email address"
               className="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter"
             />
+            {errors.email && (
+              <p className="text-red-600 pt-1 pl-2">{errors.email.message}</p>
+            )}
           </div>
 
           <div className="mb-4.5">
@@ -70,6 +96,11 @@ export default function Page() {
               placeholder="Enter password"
               className="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter"
             />
+            {errors.password && (
+              <p className="text-red-600 pt-1 pl-2">
+                {errors.password.message}
+              </p>
+            )}
           </div>
 
           <div className="mb-5.5">
@@ -86,6 +117,11 @@ export default function Page() {
               placeholder="Re-enter password"
               className="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter"
             />
+            {errors.rePassword && (
+              <p className="text-red-600 pt-1 pl-2">
+                {errors.rePassword.message}
+              </p>
+            )}
           </div>
           <button
             type="submit"
